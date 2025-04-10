@@ -1,5 +1,0 @@
-let name = "Shashidhar"; // String
-const age = 22; // Number
-let isDeveloper = true; // Boolean
-
-console.log(name, age, isDeveloper);
