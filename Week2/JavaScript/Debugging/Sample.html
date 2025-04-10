@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>My Webpage</title>
+</head>
+<body>
+    <form onsubmit="return validate()">
+        <input type="number" id="num" required>
+        <button type="submit">Submit</button>
+        <p id="error" style="color: red;"></p>
+    </form>
+    
+    <script defer>
+        function validate() {
+            let num = document.getElementById("num").value;
+            console.log("Input:", num);
+        }
+    </script>
+    
+    
+</body>
+</html>

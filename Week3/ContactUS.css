@@ -1,0 +1,68 @@
+:root {
+    --form-bg: #fff3cd;
+    --text-color: #000;
+    --bg-color: #f4f4f4;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    margin: 0;
+    transition: 0.3s;
+}
+
+.container {
+    background-color: var(--form-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    transition: 0.3s;
+    color: var(--text-color);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+#error {
+    color: red;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --form-bg: #2c2c2c;
+    --text-color: #f0f0f0;
+    --bg-color: #121212;
+}

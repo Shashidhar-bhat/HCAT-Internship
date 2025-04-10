@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intern Profile</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .intern-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 320px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .intern-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .intern-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .intern-details {
+      padding: 20px;
+    }
+
+    .intern-details h2 {
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .intern-details p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .skill {
+      background-color: #007BFF;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+     
+    }
+
+    .contact-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="intern-card">
+    <img src="E:\Shashi_E\Shashi.jpg" alt="Intern Photo" class="intern-image">
+    <div class="intern-details">
+      <h2>Shashidhar Bhat KS</h2>
+      <p>Intern - Full Stack Developer</p>
+      <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">React</span>
+        <span class="skill">Node.js</span>
+      </div>
+      <a href="shashidharbhat000@gmail.com" class="contact-btn">Contact Me</a>
+    </div>
+  </div>
+
+</body>
+</html>
