@@ -1,0 +1,160 @@
+/* Background with overlay */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 0;
+}
+
+/* Login card styling */
+.login-card {
+  display: flex;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
+.login-form {
+  flex: 1;
+  padding: 40px;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #1e293b;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+/* Toggle buttons */
+.toggle-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+  flex: 1;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f3f4f6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-buttons button.active {
+  background-color: #10b981;
+  color: #fff;
+  border-color: #10b981;
+}
+
+/* Form elements */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: #64748b;
+  text-decoration: none;
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 20px;
+  color: #64748b;
+}
+
+.signup-text a {
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Right side image */
+.login-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8fafc;
+}
+
+.login-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+  }
+  
+  .login-form {
+    padding: 30px;
+  }
+  
+  .login-image {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    padding: 20px;
+  }
+  
+  .toggle-buttons {
+    flex-direction: column;
+  }
+  
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .forgot-password {
+    align-self: flex-end;
+  }
+}

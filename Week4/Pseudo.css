@@ -1,0 +1,49 @@
+a {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: red;
+  }
+  
+  .paragraphs p:first-child {
+    font-weight: bold;
+  }
+  
+  .list li:nth-child(even) {
+    background-color: #f0f0f0;
+  }
+  
+  .box {
+    width: 150px;
+    height: 150px;
+    margin: 10px 0;
+  }
+  
+  .transition-box {
+    background-color: teal;
+    transition: all 0.5s ease;
+  }
+  
+  .transition-box:hover {
+    width: 200px;
+    background-color: orange;
+  }
+  
+  .animation-box {
+    background-color: purple;
+    animation: moveBox 3s infinite alternate;
+  }
+  
+  @keyframes moveBox {
+    from {
+      transform: translateX(0);
+      background-color: purple;
+    }
+    to {
+      transform: translateX(200px);
+      background-color: deeppink;
+    }
+  }
+  

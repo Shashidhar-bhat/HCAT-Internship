@@ -1,0 +1,70 @@
+<!-- <div class="dashboard-container">
+  <div class="sidebar">
+    <div class="profile-section">
+      <img src="assets/images/patient-avatar.png" alt="Patient" class="profile-img">
+      <h3>{{ patientName }}</h3>
+      <p>Patient ID: {{ patientId }}</p>
+    </div>
+
+    <nav>
+      <a routerLink="/patient/dashboard" class="active">
+        <i class="fas fa-home"></i> Dashboard
+      </a>
+      <a routerLink="/patient/appointments">
+        <i class="fas fa-calendar-check"></i> Appointments
+      </a>
+      <a routerLink="/patient/prescriptions">
+        <i class="fas fa-prescription"></i> Prescriptions
+      </a>
+      <a routerLink="/patient/medical-records">
+        <i class="fas fa-file-medical"></i> Medical Records
+      </a>
+      <a routerLink="/patient/settings">
+        <i class="fas fa-cog"></i> Settings
+      </a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h1>Patient Dashboard</h1>
+      <div class="header-actions">
+        <button (click)="bookAppointment()">
+          <i class="fas fa-plus"></i> Book Appointment
+        </button>
+        <button (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </header>
+
+    <div class="cards-container">
+      <div class="card upcoming-appointments">
+        <h2><i class="fas fa-calendar-day"></i> Upcoming Appointments</h2>
+        <div *ngFor="let appt of appointments" class="appointment">
+          <p><strong>Dr. {{ appt.doctor }}</strong></p>
+          <p>{{ appt.date }} at {{ appt.time }}</p>
+          <p>{{ appt.purpose }}</p>
+        </div>
+      </div>
+
+      <div class="card prescriptions">
+        <h2><i class="fas fa-prescription-bottle-alt"></i> Recent Prescriptions</h2>
+        <div *ngFor="let prescription of prescriptions" class="prescription">
+          <p><strong>{{ prescription.medication }}</strong></p>
+          <p>Dosage: {{ prescription.dosage }}</p>
+          <p>Refills: {{ prescription.refills }}</p>
+        </div>
+      </div>
+
+      <div class="card health-metrics">
+        <h2><i class="fas fa-heartbeat"></i> Health Metrics</h2>
+        <div class="metric">
+          <p>Last Blood Pressure: {{ bloodPressure }}</p>
+          <p>Last Glucose Level: {{ glucoseLevel }}</p>
+          <p>Weight: {{ weight }} kg</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

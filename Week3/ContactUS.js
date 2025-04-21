@@ -12,7 +12,26 @@ const emailError = document.getElementById('emailError');
 const messageError = document.getElementById('messageError');
 const timerElement = document.getElementById('timer');
 
-// Event Handling & Validation
+let timerSeconds = 5;
+let countdown;
+
+function startTimer() {
+    submitBtn.disabled = true;
+    timerElement.textContent = `Please wait ${timerSeconds} seconds before submitting...`;
+
+    countdown = setInterval(() => {
+        timerSeconds--;
+        if (timerSeconds > 0) {
+            timerElement.textContent = `Please wait ${timerSeconds} seconds before submitting...`;
+        } else {
+            clearInterval(countdown);
+            timerElement.textContent = "";
+            submitBtn.disabled = false;
+        }
+    }, 1000);
+}
+
+
 function validateForm() {
     let valid = true;
 
@@ -40,15 +59,31 @@ function validateForm() {
     return valid;
 }
 
-toggleFormBtn.addEventListener('click', () => {
-    if (form.classList.contains('hidden')) {
-        form.classList.remove('hidden');
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (validateForm()) {
+        successMessage.classList.remove('hidden');
+        successMessage.textContent = "Thank you! Your message has been sent.";
+
+        form.reset();
+        timerSeconds = 5;
+        startTimer();
     } else {
-        form.classList.add('hidden');
+        successMessage.classList.add('hidden');
     }
+});
+
+
+toggleFormBtn.addEventListener('click', () => {
+    form.classList.toggle('hidden');
 });
 
 
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
+
+
+startTimer();
