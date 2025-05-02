@@ -25,14 +25,14 @@ export class SignupComponent {
       return;
     }
 
-    // In a real app, you would call your authentication service here
+
     console.log('Signup data:', {
       email: this.email,
       password: this.password,
       accountType: this.accountType
     });
 
-    // Show success message and redirect
+
     alert('Account created successfully!');
     this.router.navigate(['/login']);
   }
@@ -62,7 +62,7 @@ export class SignupComponent {
   }
 
   isValidEmail(email: string): boolean {
-    // Basic email validation regex
+
     const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return pattern.test(email);
   }

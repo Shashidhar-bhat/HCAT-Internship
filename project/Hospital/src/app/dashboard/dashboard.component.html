@@ -1,70 +1,108 @@
-<!-- <div class="dashboard-container">
-  <div class="sidebar">
-    <div class="profile-section">
-      <img src="assets/images/patient-avatar.png" alt="Patient" class="profile-img">
-      <h3>{{ patientName }}</h3>
-      <p>Patient ID: {{ patientId }}</p>
+<div class="dashboard">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-brand">Hospital System</div>
+    <div class="navbar-links">
+      <a routerLink="/dashboard" class="active">Dashboard</a>
+      <a routerLink="/profile">Profile</a>
+      <a routerLink="/settings">Settings</a>
+      <a routerLink="/login" class="logout">Logout</a>
     </div>
+  </nav>
 
-    <nav>
-      <a routerLink="/patient/dashboard" class="active">
-        <i class="fas fa-home"></i> Dashboard
-      </a>
-      <a routerLink="/patient/appointments">
-        <i class="fas fa-calendar-check"></i> Appointments
-      </a>
-      <a routerLink="/patient/prescriptions">
-        <i class="fas fa-prescription"></i> Prescriptions
-      </a>
-      <a routerLink="/patient/medical-records">
-        <i class="fas fa-file-medical"></i> Medical Records
-      </a>
-      <a routerLink="/patient/settings">
-        <i class="fas fa-cog"></i> Settings
-      </a>
-    </nav>
-  </div>
-
-  <div class="main-content">
-    <header>
-      <h1>Patient Dashboard</h1>
-      <div class="header-actions">
-        <button (click)="bookAppointment()">
-          <i class="fas fa-plus"></i> Book Appointment
-        </button>
-        <button (click)="logout()">
-          <i class="fas fa-sign-out-alt"></i> Logout
-        </button>
+  <header class="dashboard-header">
+    <h1>Patient Dashboard</h1>
+    <div class="patient-profile">
+      <img [src]="patient.photo || 'assets/default-avatar.png'"
+           alt="Patient Photo"
+           class="patient-photo">
+      <div class="patient-info">
+        <h2>{{ patient.name }}</h2>
+        <p>ID: {{ patient.id }} | Age: {{ patient.age }}</p>
+        <p>Blood Type: {{ patient.bloodType }}</p>
+        <p>Last Visit: {{ patient.lastVisit | date:'mediumDate' }}</p>
+        <button (click)="startEdit()" class="edit-btn">Edit Profile</button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <div class="cards-container">
-      <div class="card upcoming-appointments">
-        <h2><i class="fas fa-calendar-day"></i> Upcoming Appointments</h2>
-        <div *ngFor="let appt of appointments" class="appointment">
-          <p><strong>Dr. {{ appt.doctor }}</strong></p>
-          <p>{{ appt.date }} at {{ appt.time }}</p>
-          <p>{{ appt.purpose }}</p>
-        </div>
+  <div class="modal" *ngIf="isEditing">
+    <div class="modal-content">
+      <h3>Edit Patient Profile</h3>
+      <div class="form-group">
+        <label>Name:</label>
+        <input [(ngModel)]="editedPatient.name" type="text">
       </div>
-
-      <div class="card prescriptions">
-        <h2><i class="fas fa-prescription-bottle-alt"></i> Recent Prescriptions</h2>
-        <div *ngFor="let prescription of prescriptions" class="prescription">
-          <p><strong>{{ prescription.medication }}</strong></p>
-          <p>Dosage: {{ prescription.dosage }}</p>
-          <p>Refills: {{ prescription.refills }}</p>
-        </div>
+      <div class="form-group">
+        <label>Age:</label>
+        <input [(ngModel)]="editedPatient.age" type="number">
       </div>
-
-      <div class="card health-metrics">
-        <h2><i class="fas fa-heartbeat"></i> Health Metrics</h2>
-        <div class="metric">
-          <p>Last Blood Pressure: {{ bloodPressure }}</p>
-          <p>Last Glucose Level: {{ glucoseLevel }}</p>
-          <p>Weight: {{ weight }} kg</p>
-        </div>
+      <div class="form-group">
+        <label>Blood Type:</label>
+        <input [(ngModel)]="editedPatient.bloodType" type="text">
+      </div>
+      <div class="form-group">
+        <label>Last Visit:</label>
+        <input [(ngModel)]="editedPatient.lastVisit" type="date">
+      </div>
+      <div class="modal-actions">
+        <button (click)="saveChanges()" class="save-btn">Save</button>
+        <button (click)="cancelEdit()" class="cancel-btn">Cancel</button>
       </div>
     </div>
   </div>
-</div> -->
+
+
+  <div class="dashboard-content">
+
+    <div class="dashboard-card vital-signs">
+      <h3>Vital Signs</h3>
+      <div class="vitals-container">
+        <div *ngFor="let vital of vitals" class="vital-item" [class.critical]="checkCritical(vital)">
+          <div class="vital-value">
+            {{ vital.value }}
+            <span class="trend-icon">{{ getTrendIcon(vital.trend) }}</span>
+            <span *ngIf="checkCritical(vital)" class="critical-alert">⚠️ Critical</span>
+          </div>
+          <div class="vital-label">{{ vital.name }}</div>
+          <div class="vital-unit">{{ vital.unit }}</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="dashboard-card medical-history">
+      <h3>Medical History</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Diagnosis</th>
+            <th>Medications</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of medicalHistory">
+            <td>{{ record.date | date:'mediumDate' }}</td>
+            <td>{{ record.diagnosis }}</td>
+            <td>{{ record.medications }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dashboard-actions">
+      <button (click)="downloadReport()" class="download-btn" [disabled]="isLoading">
+        {{ isLoading ? 'Generating...' : 'Download Report (PDF)' }}
+      </button>
+    </div>
+  </div>
+
+  <footer class="dashboard-footer">
+    <p>© 2025 YourHospitalName | <a href="#">Terms</a> | <a href="#">Privacy Policy</a></p>
+  </footer>
+
+  <div *ngIf="isLoading" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+</div>
