@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto Font Resize</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      background: #f0f0f0;
+    }
+    button {
+      margin: 0.5em;
+      padding: 0.5em 1em;
+      cursor: pointer;
+    }
+    #text {
+      font-size: 16px;
+      background: #356;
+      color: #fff;
+      padding: 1em;
+      margin-top: 1em;
+    }
+    #fontSizeDisplay {
+      font-weight: bold;
+      margin-left: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="increase">Auto Increase</button>
+  <button id="decrease">Auto Decrease</button>
+  <button id="stop">Stop</button>
+  <span id="fontSizeDisplay">16px</span>
+
+  <div id="text">Some text</div>
+
+  <script src="time.js"></script>
+</body>
+</html>

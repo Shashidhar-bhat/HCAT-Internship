@@ -1,141 +1,32 @@
-/* Modern Indian Healthcare Styling */
-.hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEA8QEA8PDw0ODw8NDQ0NDw8PDw0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGBAQGy0dHR0tKy0tLS0tLS0tLS0tLS0tLS0tKystLS0tLS0tLS0tLTcrLS03NzctLSstLSsrKystK//AABEIALcBEwMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAFAAECAwQGB//EADcQAAIBAwIDBwIEBQQDAAAAAAABAgMEEQUhEjFBBhNRYXGBkSIyQlKhwRQjkrHhQ2JyohVT8P/EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACIRAAICAgEFAQEBAAAAAAAAAAABAhEhMRIDIjJBURNhgf/aAAwDAQACEQMRAD8A9ShqkshSzuOJZYEnaYXMe2rzhlLD9ehs4prByxm08nSCBNnqiX01Nv8Ad0CcKsZbppryM3Fo6IyT0PMrjPYskyiC3YLQMjKpjc0RnlGK6iWW1TkhtEqWaHuVlHJ6zS3Z11U5nWYbm3SZl1lg5S7pNcmbOztOVWUl+UV1DYI9i4fXU9UdEnSs5YK5JC1Cg6TSfJ8mUqRq7e1HCEJR/Ov7MA2N7xRy/AhO0XNVJoOWt9UpfZLC8Hui6Wq1pf6jXphAunVyWphxQ1J/TW7iT+6Un6tjtp+BmTJJjHZYOMhABJMszkrGTEMkxZJZyQbAZIWC62tZ1PtWfPkjZDRqr5uK98kOSRSi2DcDNBmGhPrNeyLo6HDrKT+ET+kR/nI55ko8jXqdpGm1wt79GY4FJ2rE1ToCagvqMrN2pr6jCarRi9kSMmSZBookg5DkcCAR1cNZm9pJr2wNLVGpJY2fPyLZU1UWzwYKti03vnqcjSRk+S9hqlUU+pvtbfqm0/JtHGW1zKM3u/k6OyvWlv8AIrZr0+p9Cy75ZeVJeezIUtV4cqaakErZ5in4oH16ceN7dAtezsdpWiutfJl9nVTa3B1xaJvbYroqdOSxv5DST0ZJu7OinyAGrxCKv/zJr1B97VjN8yoJpmk2mjnrpbBLsdH6qnqv7DV7WGP8mjsrBKVTHLK/saSlcWYxi1NG7XLSNXhjJJrPJgO97NfS+7fC8cuh02oNJxz4lKul7GSk0XOMeTs89qUq1u8TTx4rdGyzvFPC6ncVbeFWOGspgR9nIwqKcNl1jnKZqppkPptaMfqSwT1990k0vDJhtr2MupQnh0F9Ptu8lhvC8g5T0Wl14n6s563qNbxbT8UTneVH/qT/AKmZyjJvDNYyillHSx02ivwL3bf9xqsKEU9qa/pOa7xvm2/VtkUT+T9sr9F6RKq1xS4ftzt6C5kGPE1MwhYah3Sxw5XTfBrety6QXuwOSh4EOEXkpTawEJ6vVfLhXsUT1Gs/xteiSFGxqP8AD8tE1pdT/avcnsRXezDVm5bybb8WVxCNTTJJZcl7ZB7WHjwGmnolprYM1Rbg5hXVIgxo2joylsraIyLGiDRRBFREXKIgAIWt80+FvBZdXEllrLyZ72Ck1whSlaN0vtT225HK0YcW8AS0fHLfmHraG3DgBTrxpy8GnumFLHU030ZOUEMPJ29ksQXoC72o1Va8kE7OWYJ+RirUc1HLwQltnpSVxRgu6k4LPQWmVnOWWX39WLTjtnBl01YmkFZOd4mg7UpJrkBdRtEnlbegdXIHagi4PJ0zWDna9N9Tf2aqRhKS6t5KrhpI1dnaMZOba5P9jWXizGPkjTrdRS4En1/Yoo0co139jFyT/cyxpzi9nlGVJjlHuthC1g0i6Rko3eF9Sx6l6rJ9UKmaqqMl1ZxqbSSa8zndR7O4eaT4fJZaOr6jyiWpNESgmc5olhNxlxppp4KbiSjNwb3R1lvTSzsctrmkylVlUg8Pw3KjK2RKFRwPDdBjT6VHhTlwZ68TQK0+xn3eZcyilNNtdU8MJK8BGXH0dSqtvHrTXpgrr6hRw0mn5JMAUKfFNRzhBmGk0+rl8mTjFbZspSekCHLLfRN7IspSw0/AKy06kly/7MGVElJpcjRSTM3Fo3LVGltH9SMtWn0Uf1MlNLKzyCMK9JL8PwQ0l6LTb9mGrqFSS6eyMTznfn5hyd9SXX4iwVfXMZv6fl7BF/wUl/QbqSyjNbaXWqLMYbeLaQRqJNBDT6tSMcRp8Xg+JItyaWCFFN5BMezdd/kXrL/A67M1VznD2yzoO/uHypwXrLJVVlcde7Xpkz/Sf0v84fGCV2el/wCxf0jm9ut+aPwIfKX0XCPwE6hZKnJcGXnpzwFLafDS38OpVbWcqkuJRbX5mxr+jODx4g6OVKu6jnNXpKTbXPItKtJcXLYMU7Dji2o8T6vBps7bh6YfmBmos6qxWIR9EY69XE5LyNtr9i9AVfSxOXoR9O+bqKB19VallGnTp5kitUuLdmi1glJAtnNG+VhmPIxXyNcGZbsqOzrloDXMTb2aX3+v7GW75Gzs4vu9TSXiZR8i/VoSlKCj4vJO3t5LmWXlzGEo8TSz1ZdG5g1nMfkyvBrStlM7fPRFLsX0ePk1u6p/mj8oX8VB8pJ+jBNjpGKnTmh1XecNfoy2rewp/fJL1KJavb/njn1K/wAFhezfRW3MrnbZb5kKE1NZi8oxPVlCTjLOV1FTC0EVbpRwCY6RGM20ubbYRp30ZR4lnBVa3iqN46ZW402hNRYAvocFRJdfAbvZcSTlL+pm+8pZrx9GYryi+8WOSRoZPAWt40sLLi35vJfKnTxso+yQDppp8uRvt7zpw/qZygzWM0yutSab2wilIJzxJdPkxVKbi8oakJxE7OTXQz1bKS3yv1CNvXyt+H3LaqTXOPsieTTK4poA8IV0/KiYZQ3aN9smo7Nr2HPRMMM0yqPyM0q0n1K7uUlF/VIHW9fOfqfyRGNlSlRrlVlnmIz4Ea8TLkH6V9RpYTaj4bgnXNTpyf0yTxtlAGrpk288TZVLTqnjsLiYz6k5KqOy0W5hwJdf7k7+mtnHnkB6ZR4VuwrCoiaLjJuNNBq2+1egGvqn81rHgF7aa4efQDXk13r9hL2bdTxQ1SWFsiNlJuWWPWmsELL7gSMEshyBnuS6myq4GtnS9Ai9Rt7Pcpev7GS9NnZ/k/U0l4mcfIo7SQjJwUnhb9cAbgorbi/7MKdq9KqXPCqb4XHLbZzD7K3Cf3J/JK0OW2EZOgubXvIJ6TKk2uDHszkbvstcPw+ToOzOlVKOOPwKrBObN2v1qccd5hLPUDwv7bK+qHPxRv7V6PO6UYwko4ecvJzVDsTXUlJ1IbPP4gVDd2eh6ROLp5jy8jnNS1GjGvKEpR488up0GiWzp0lF814HI6l2YqVrudZTilxL6XnOyJVWxyukddZ8LoprljJh0eoqnE4vZSkvdPAQsrdxoqHVRx+hj0DT5UVJNp5lKW3m8hjI82iFbKrL0ZXUnmpjyNtSn/OT8mRlb5nnyHYqKYUkyM7U19yJRaCwoHQUovkanJyXIt4SaihSyOIGuJum89CcdZp43kvlGq/tOOOOQGh2Yb/GvgHT2GU8D1tUhxZWDTHW4Rjl+A1t2VT51Nv+JbW7Kprh73bGM8H+QdVQkpXYI1DtLCSxHn6kdNu01kfUeyKpRclVUsdJQx+5bpWnfTzXsVGkiZ3ZrV2hy1aevERWCe4GO8k5PHIlG8k2kRq2dTLxDHq0ZXb1YvLXXxIzZx8pIP1LWahxprllx8ii3uMrr8kra8qzhwYXLGWZ7ajOMnlLn0ZRu56o6e0oSUM5fIHXC+p55+IetfsXoczq6cqvBF4b8DO9nRPEUVVrjC5ltrNtrBjq6bNOKk3h9WHrCz4Yp+5VoiCb2XU6c/ErrxmbabI1hXk2rAEuYy6mvRZSWcLYV5yNWiLZ+pUn2kRXcXd/Li5ClWfgYNb1HuJLCb4s8jHR1iUvwtEqOLKc0nQXlX8h++8gXWv3tsbbS44+gqEppuiu5umnsZ3ey/8AkLVm1JYQLdefElwvnuWlZLnTo6ezr5huAK9/UVWSjJcLfgH7COae63wc3O3k68tnw8QorLKk8I6SjX/lZzvgx6NdTmnx88vGFjbOxtpUl3fsUafBb7YFimVm0M6n832JRn9b36Ee7Xev0JRpfW35CYi5CGURKIDIuBDBcNgAMV9JqOVzAc9XqRX3L4DupPEG/I5edenLm17oOLZEnTLodoKsd1NfCIaj2iuI0+OM1nhz9scGWbp+Mfge54HS6Y4fAfFkJv6c9d9rLuqsTnFrwUUv7HU6DczdNNvoctVjR8Y/COp0aUVBYxyKimOTCfey8REeJCLogKUrdt8kPWs1yaWTD2TvZ1OJ1PHYM6i91j3IbalRpGKcbKLShGPREJ0o8TexVVruLwDVWk5Pd8wS9ik0lR1tD7fYHxslKq59VyN1t9i9ALdXM4VJcLx6kK80ayapWE7mgpJLwJwjiOPBAahfSbeZGyhc8W2Q4sFJPJohkepklSFUAPRhul4mrSOT9TJeM16NyfqOXiTHyBXaWslOCaznJlo1VlJLmae0ttKdSHD0yYYUKkJReOLHgWlgzmnyCc7KbScYZNFlCUXiUWn5llvqMkknTl+hqVbiecNepm3L2aqMdoFarniWDFRrfUk0GbilxS8h/wCHjtsUmS42zRafYCctzlt15hunFKJjXCn7ii9lyWjRFYh7Fdp6Fsqi4fYz21dPkiawP2Wtri8yzCMqTc2yapNt5YNAS40JTEqSJKKGAzREkyIAX29OLzlJ+pL+Bo5+yHwjHVb6bDL1ZLQ0wjGypZzwQz/xRTf6dQnHEqcP6UZ1n8z+Si6cuFviefUSTvY21WjPLsxZvnRp+0UbrfRqEFiMIpHOSvKqe0nzC9pVm45cnkvP0jHwI/8AjKX5UIxOtPxEHd9C4/CzT6VKntFJehZqU4bPKzkH/wDj5vyHWlTfOTLpXdmacqqgfc1eKql+HqFbW2p80lnqJaKnz3Nltp0YdBOSrYRhK8muC+kDanSTUsL6ugbSwiiNBPOxEXWTWStUcna2dXL22b2CdjbTi234h1Ukug04LBXOyV06KKYqgy2Kq0wH6M12atG+1+oNu6pv0SX07+LHJdpMX3GmrTTlv4DOlEzXt4oTx5GZ6jnkhJMbaCXCiSkgX/ESZfRg3zYNDTLa1VJlXfPoidSEUx4yiMVF9KUmjG7dt7sJUpfSYpT3JTKaL1bpQFaQSRZn6fYrt+QrwP2SX3MbO7HXNkeogHEJCbABmRHbGARTcPYyd6/E111sZeApCY3fvxGq1XgTpjTp7BQWY3FGulPCK+6LYw2GkKx+MRHAiqJs6ThFgbIsmBuIQ2SLkh0BKRCDIyrLHMzfxXPCyNIls2NkJSRm4py6YJRt5Pmx0Fj1KkTNUeeSNsLRFqppdA5JC42Cf4SUumDTbWLXU24JwBzY1FA+rp8W8vdjKwiugQYwuTHxRgdoiVOhg2NDcIchUgfXpPJUqLCUojKmPkLiV0U1ExODyFFHYp4ATG0Qz9HsQt5M0uGw0IBYUUKe7GVTdlvAssg6YYAj3onVF3RCVIeBZH71Eu8RWqIpUxYBEatRFWR3SZLuxiK8iZXOLyWRp7AIgWRRTVi0PCTGBa4iG4hDsQYnWiubRTK7XRN+hKFnFf5L40kuhnaNcmTjm+Sx6iVtJ85P2NuwshyDiZ4WaRONFLoXkCbY6GwOIYYEyLYiLEAzZKmytllMbATGExAAhCEADCyMIAHQsEiAASZAk2QQARIkyLQxERYJYH4RARwRkibI4ACCiKUSzA0gAo4CcYj4JpABRVppkFRRokhsDsTRT3Ii4QWFBBsZjkWyShCEMMCwrJvkQEgGEhNDoYCGY4zACLJwIseLABMQzEADiEIAGEIZsAJEGx8kQAcYcYAGEONgAFgWRxMAINjDiAB8kZDjMAGSJJDDoBCcSPCSGACOBxxABqGEIBiHQhCAkyIhAAhCEADDMYQwGZJIQgATEMIAHEIQARbGEIAHGEIAEMIQAIfAhCAZjCEMBCwIQANgixCAQ5JCEAxxsCEIBsDCEMD/2Q==');
-background-size: cover;
+/* Hero Section Styling */
+.hero {
+  background: url('/assets/hero-image.jpg') no-repeat center center;
   background-size: cover;
-  background-position: center;
+  padding: 50px 0;
   color: white;
-  padding: 6rem 0;
   text-align: center;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
 }
 
-.hero-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.hero-section h1 {
+.hero h1 {
   font-size: 3rem;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.hero-section .content {
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.hero-section .cta-group {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.hero-section .cta-button {
-  padding: 15px 40px;
-  font-size: 1.1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-decoration: none;
-  display: inline-block;
-  border: 2px solid transparent;
-  font-weight: 600;
-}
-
-.hero-section .cta-button.primary {
-  background-color: #2a7f62;
-  color: white;
-}
-
-.hero-section .cta-button.primary:hover {
-  background-color: #1e5e48;
-}
-
-.hero-section .cta-button.secondary {
-  background-color: transparent;
-  color: white;
-  border-color: white;
-}
-
-.hero-section .cta-button.secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.features-section {
-  padding: 4rem 0;
-  background-color: #f5f9f8;
-}
-
-.features-section .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.features-section .feature-card {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.features-section .feature-card:hover {
-  transform: translateY(-5px);
-}
-
-.features-section .feature-card img {
-  height: 80px;
   margin-bottom: 20px;
 }
 
-.features-section .feature-card h3 {
-  color: #2a7f62;
-  margin-bottom: 15px;
+.hero p {
+  font-size: 1.5rem;
 }
 
-.features-section .feature-card p {
-  color: #555;
-  line-height: 1.6;
+/* Doctors Section Styling */
+#doctors {
+  padding: 40px 0;
+  background-color: #f4f4f4;
 }
 
-/* Responsive Design for India */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 4rem 0;
-    min-height: 60vh;
-  }
+#appointment {
+  padding: 40px 0;
+  background-color: #e2e2e2;
+}
 
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-
-  .hero-section .content {
-    font-size: 1rem;
-  }
-
-  .hero-section .cta-group {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .features-section {
-    padding: 2rem 0;
-  }
+section {
+  margin: 0 10%;
 }

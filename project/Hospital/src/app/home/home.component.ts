@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AppointmentComponent } from '../appointment/appointment.component';
+import { DoctorsComponent } from '../doctors/doctors.component'; // if you're also using app-doctors
 
 @Component({
   selector: 'app-home',
-  standalone: true,  // Keep this
-  imports: [CommonModule],  // Add required modules here
+  standalone: true,
+  imports: [AppointmentComponent, DoctorsComponent], // ✅ Include standalone components used in the template
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

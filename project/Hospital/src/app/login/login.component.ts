@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -11,6 +12,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./login.component.css'],
   standalone: true,
   imports: [
+    FormsModule,
     MatInputModule,
     MatButtonModule,
     MatCheckboxModule,
@@ -19,7 +21,10 @@ import { RouterModule } from '@angular/router';
   ]
 })
 export class LoginComponent {
+  email: string = '';
+  password: string = '';
   role: 'patient' | 'doctor' = 'patient';
+  errorMessage: string = '';
 
   setRole(role: 'patient' | 'doctor') {
     this.role = role;
@@ -27,7 +32,19 @@ export class LoginComponent {
 
   onLogin(event: Event) {
     event.preventDefault();
-    console.log(`Logging in as ${this.role}`);
-    // Add your login logic here
+
+    if (!this.email || !this.password) {
+      this.errorMessage = 'Email and password are required.';
+      return;
+    }
+
+
+    if (this.email === 'test@example.com' && this.password === '123') {
+      console.log(`Successfully logged in as ${this.role}`);
+      this.errorMessage = '';
+
+    } else {
+      this.errorMessage = 'Invalid email or password.';
+    }
   }
 }

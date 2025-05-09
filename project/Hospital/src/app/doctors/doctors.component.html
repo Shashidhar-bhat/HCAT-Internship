@@ -1,0 +1,8 @@
+<div class="doctors-section">
+  <h2>Our Doctors</h2>
+  <div class="doctor-card" *ngFor="let doctor of doctors">
+    <img [src]="doctor.img" alt="{{ doctor.name }}">
+    <h3>{{ doctor.name }}</h3>
+    <p>{{ doctor.specialty }}</p>
+  </div>
+</div>
