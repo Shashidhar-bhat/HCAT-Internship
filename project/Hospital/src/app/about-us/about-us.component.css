@@ -1,0 +1,84 @@
+.about-us-wrapper {
+  padding: 2rem;
+  background: linear-gradient(to right, #f0f4f8, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.intro-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.intro-section h1 {
+  font-size: 2.5rem;
+  color: #004d7a;
+  margin-bottom: 0.5rem;
+}
+
+.intro-section p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card .icon {
+  font-size: 2.2rem;
+  color: #0077b6;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  color: #023e8a;
+  margin-bottom: 1rem;
+}
+
+.card p, .card ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.card ul {
+  padding-left: 1.2rem;
+  list-style-type: square;
+}
+
+.gallery-card {
+  text-align: center;
+  background: #e0f7fa;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .intro-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .card .icon {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="logo" routerLink="/">
+    <img
+      src="https://via.placeholder.com/200x250.png?text=Yodha+Hospital+Logo"
+      alt="Yodha"
+      width="200"
+      height="250"
+    />
+  </div>
+
+  <nav class="nav-links">
+    <a routerLink="/about-us">About</a>
+    <a routerLink="/doctors">Doctors</a>
+    <a routerLink="/specialities">Specialities</a>
+    <a routerLink="/locations">Locations</a>
+    <a routerLink="/contact">Contact Us</a>
+    <a routerLink="/book-appointment">Book Appointment</a>
+  </nav>
+
+  <div class="right-section">
+    <select [(ngModel)]="selectedLanguage" (change)="changeLanguage($event)">
+      <option value="en">English</option>
+      <option value="te">Hindi</option>
+      <option value="hi">Kannada</option>
+    </select>
+    <div class="emergency-contact">
+      <strong>Emergency:</strong> 1800-123-456
+    </div>
+  </div>
+</header>

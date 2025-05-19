@@ -1,39 +1,155 @@
-<!-- Header / Navbar -->
-<header>
-  <!-- <app-navbar></app-navbar> -->
-</header>
+<div class="hospital-container">
+  <!-- Hero Section with Video Background -->
+  <section class="hero-section">
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="/assets/medical-hero-video.mp4" type="video/mp4">
+        <img src="/assets/img2.jpg" alt="Hospital Banner" fallback>
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to <span class="highlight">Yodha</span> Hospital</h1>
+      <p class="hero-subtitle">World-Class Care, Personalized for You</p>
+      <div class="hero-cta">
+        <button class="cta-primary" routerLink="/about-us">Learn More</button>
+        <button class="cta-secondary" routerLink="/book-appointment">Book Appointment</button>
+      </div>
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
+    </div>
+  </section>
 
-<!-- Hero Banner Section -->
-<section class="hero-banner text-center">
-  <div class="hero-content">
-    <h1>Welcome to Our Multispecialty Hospital</h1>
-    <p>Compassionate care. Advanced medicine. Close to home.</p>
-  </div>
-</section>
+  <!-- Specialties Section with Animated Cards -->
+  <section class="specialties-section">
+    <div class="section-header">
+      <h2>Our <span class="text-gradient">Specialties</span></h2>
+      <p class="section-subtitle">Comprehensive care across all medical disciplines</p>
+    </div>
+    <div class="specialty-grid">
+      <div class="specialty-card" *ngFor="let specialty of specialties">
+        <div class="card-icon">
+          <img [src]="specialty.icon" [alt]="specialty.name + ' icon'">
+        </div>
+        <h3>{{specialty.name}}</h3>
+        <p>{{specialty.description}}</p>
+        <a href="#" class="card-link">Learn more →</a>
+      </div>
+    </div>
+  </section>
 
-<!-- Doctors Showcase -->
-<section class="doctors-section section-padding">
-  <div class="section-header">
-    <h2>Meet Our Expert Doctors</h2>
-    <p>Qualified professionals ready to serve you</p>
-  </div>
-  <div class="card-container">
-    <app-doctors></app-doctors>
-  </div>
-</section>
+  <!-- Doctors Section with Carousel -->
+  <section class="doctors-section">
+    <div class="section-header">
+      <h2>Meet Our <span class="text-gradient">Expert Team</span></h2>
+      <p class="section-subtitle">Board-certified specialists dedicated to your health</p>
+    </div>
+    <div class="doctors-carousel">
+      <div class="doctor-card" *ngFor="let doctor of doctors">
+        <div class="doctor-image">
+          <img [src]="doctor.image" [alt]="doctor.name">
+          <div class="doctor-badge">{{doctor.specialty}}</div>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. {{doctor.name}}</h3>
+          <p class="doctor-title">{{doctor.title}}</p>
+          <div class="doctor-rating">
+            <span *ngFor="let star of [1,2,3,4,5]">
+              <i class="icon-star" [class.filled]="star <= doctor.rating"></i>
+            </span>
+            <span>({{doctor.reviews}} reviews)</span>
+          </div>
+          <button class="btn-outline" routerLink="/doctors/{{doctor.id}}">View Profile</button>
+        </div>
+      </div>
+    </div>
+    <div class="section-footer">
+      <button class="cta-primary" routerLink="/doctors">View All Doctors</button>
+    </div>
+  </section>
 
-<!-- Appointment Booking -->
-<section class="appointment-section section-padding">
-  <div class="section-header">
-    <h2>Book Your Appointment</h2>
-    <p>Quick, easy, and secure appointment scheduling</p>
-  </div>
-  <div class="appointment-form-container">
-    <app-appointment></app-appointment>
-  </div>
-</section>
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stat-item">
+      <div class="stat-number" >0</div>
+      <div class="stat-label">Patients Treated</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" >0</div>
+      <div class="stat-label">Expert Doctors</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" >0</div>
+      <div class="stat-label">Specialties</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" >0</div>
+      <div class="stat-label">% Patient Satisfaction</div>
+    </div>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <!-- <app-footer></app-footer> -->
-</footer>
+  <!-- Appointment CTA Section -->
+  <section class="appointment-cta">
+    <div class="cta-content">
+      <h2>Your Health Can't Wait</h2>
+      <p>Schedule your appointment today and take the first step towards better health</p>
+      <div class="cta-actions">
+        <button class="cta-primary" routerLink="/book-appointment">Book Appointment</button>
+        <div class="cta-phone">
+          <i class="icon-phone"></i>
+          <span>1800-123-456</span>
+        </div>
+      </div>
+    </div>
+    <div class="cta-image">
+      <img src="/assets/doctor-patient.jpg" alt="Doctor consulting patient">
+    </div>
+  </section>
+
+  <!-- Emergency Section -->
+  <section class="emergency-section">
+    <div class="emergency-card">
+      <div class="emergency-icon">
+        <i class="icon-alert"></i>
+      </div>
+      <div class="emergency-content">
+        <h2>Emergency Services</h2>
+        <p>24/7 emergency care with immediate response</p>
+        <div class="emergency-contact">
+          <div class="contact-item">
+            <i class="icon-phone"></i>
+            <span>Emergency: 1800-123-4567</span>
+          </div>
+          <div class="contact-item">
+            <i class="icon-location"></i>
+            <span>24/7 Emergency Department</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <h2>Patient <span class="text-gradient">Testimonials</span></h2>
+      <p class="section-subtitle">Hear from those we've cared for</p>
+    </div>
+    <div class="testimonials-carousel">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="testimonial-rating">
+          <i class="icon-star filled" *ngFor="let star of [1,2,3,4,5]"></i>
+        </div>
+        <p class="testimonial-text">"{{testimonial.text}}"</p>
+        <div class="testimonial-author">
+          <img [src]="testimonial.image" [alt]="testimonial.name">
+          <div>
+            <h4>{{testimonial.name}}</h4>
+            <p>{{testimonial.condition}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

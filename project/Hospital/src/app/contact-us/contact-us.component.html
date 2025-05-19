@@ -1,0 +1,59 @@
+<div class="contact-container">
+    <h2>Contact Us - Hospital Helpdesk</h2>
+    <form (ngSubmit)="onSubmit()" #hospitalForm="ngForm">
+      
+      <label>Patient Name:
+        <input type="text" id="name" name="name" [(ngModel)]="contact.name" required>
+        <div class="error-message" *ngIf="hospitalForm.submitted && !contact.name">Name is required</div>
+      </label>
+  
+      <label>Email:
+        <input type="email" id="email" name="email" [(ngModel)]="contact.email" required>
+        <div class="error-message" *ngIf="hospitalForm.submitted && !contact.email">Email is required</div>
+      </label>
+  
+      <label>Phone Number:
+        <input type="tel" id="phone" name="phone" [(ngModel)]="contact.phone" placeholder="+91 6300717635" required>
+        <div class="error-message" *ngIf="hospitalForm.submitted && !contact.phone">Phone is required</div>
+      </label>
+  
+      <label>Department:
+        <select id="department" name="department" [(ngModel)]="contact.department" required>
+          <option value="">-- Select Department --</option>
+          <option value="Cardiology">Cardiology</option>
+          <option value="Neurology">Neurology</option>
+          <option value="Orthopedics">Orthopedics</option>
+          <option value="Pediatrics">Pediatrics</option>
+          <option value="General Medicine">General Medicine</option>
+        </select>
+        <div class="error-message" *ngIf="hospitalForm.submitted && !contact.department">Department is required</div>
+      </label>
+  
+      <label>Preferred Appointment Date:
+        <input type="date" id="appointmentDate" name="appointmentDate" [(ngModel)]="contact.appointmentDate">
+      </label>
+  
+      <label>Message / Symptoms:
+        <textarea id="message" name="message" [(ngModel)]="contact.message" rows="4" placeholder="Describe your concern..." required></textarea>
+        <div class="error-message" *ngIf="hospitalForm.submitted && !contact.message">Message is required</div>
+      </label>
+  
+      <label>Preferred Contact Method:
+        <select id="contactMethod" name="contactMethod" [(ngModel)]="contact.contactMethod">
+          <option value="Email">Email</option>
+          <option value="Phone">Phone</option>
+          <option value="WhatsApp">WhatsApp</option>
+        </select>
+      </label>
+  
+      <div class="checkbox">
+        <input type="checkbox" id="terms" name="terms" [(ngModel)]="contact.terms" required>
+        <label for="terms">I agree to the Terms & Conditions</label>
+      </div>
+      <div class="error-message" *ngIf="hospitalForm.submitted && !contact.terms">You must agree to Terms & Conditions</div>
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  

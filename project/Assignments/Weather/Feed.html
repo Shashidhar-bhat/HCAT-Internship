@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback Page with Star Rating</title>
+  <link rel="stylesheet" href="Feed.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>We Value Your Feedback</h2>
+    <form id="feedbackForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+
+      <div class="rating">
+        <label>Rate us:</label>
+        <div id="stars">
+          <span class="star" data-value="1">&#9733;</span>
+          <span class="star" data-value="2">&#9733;</span>
+          <span class="star" data-value="3">&#9733;</span>
+          <span class="star" data-value="4">&#9733;</span>
+          <span class="star" data-value="5">&#9733;</span>
+        </div>
+      </div>
+
+      <textarea id="message" placeholder="Your Feedback" rows="5" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="responseMsg"></p>
+  </div>
+
+  <script src="Feed.js"></script>
+</body>
+</html>

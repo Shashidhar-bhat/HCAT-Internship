@@ -1,0 +1,17 @@
+<div class="specialities-container">
+  <div class="specialities-header">
+    <h2>Our Medical Specialties</h2>
+    <p>Comprehensive healthcare services across all major medical disciplines</p>
+  </div>
+
+  <div class="specialties-grid">
+    <div class="specialty-card" *ngFor="let specialty of specialties">
+      <div class="specialty-icon">
+        <img [src]="specialty.icon" [alt]="specialty.name + ' icon'">
+      </div>
+      <h3>{{specialty.name}}</h3>
+      <p>{{specialty.description}}</p>
+      <a href="#" class="learn-more">Learn More →</a>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,18 @@
-<div class="doctors-section">
-  <h2>Our Doctors</h2>
-  <div class="doctor-card" *ngFor="let doctor of doctors">
-    <img [src]="doctor.img" alt="{{ doctor.name }}">
-    <h3>{{ doctor.name }}</h3>
-    <p>{{ doctor.specialty }}</p>
+<div class="doctors-container">
+  <h2>Meet Our Expert Doctors</h2>
+
+  <div class="doctors-grid">
+    <div class="doctor-card" *ngFor="let doctor of doctors">
+      <div class="card-header">
+        <img [src]="doctor.image" alt="{{ doctor.name }}" />
+      </div>
+      <div class="card-body">
+        <h3>{{ doctor.name }}</h3>
+        <span class="badge">{{ doctor.speciality }}</span>
+        <p><strong>Degree:</strong> {{ doctor.qualification }}</p>
+        <p><strong>Experience:</strong> {{ doctor.experience }}</p>
+        <button routerLink="/book-appointment">Book Appointment</button>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,0 +1,34 @@
+<div class="feedback-container">
+  <div class="feedback-card">
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Overall Experience</label>
+        <div class="star-rating">
+          <span
+            *ngFor="let star of stars; let i = index"
+            [class.filled]="i < selectedRating"
+            (click)="rate(i + 1)"
+            title="{{ratingLabels[i]}}"
+          >
+            ★
+          </span>
+        </div>
+        <div class="rating-label">
+          {{selectedRating ? ratingLabels[selectedRating - 1] : 'Select your rating'}}
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="comments">Additional Comments</label>
+
+      </div>
+
+     
+      <button type="submit" class="submit-btn">
+        Submit Feedback
+      </button>
+    </form>
+  </div>
+</div>

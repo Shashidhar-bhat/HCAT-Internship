@@ -91,7 +91,7 @@ export class DashboardComponent {
 
   downloadReport() {
     this.isLoading = true;
-    // Simulate PDF generation
+
     setTimeout(() => {
       alert('PDF report generated!');
       this.isLoading = false;

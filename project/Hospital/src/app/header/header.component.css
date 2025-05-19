@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #b0d4df;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo img {
+    height: 200px;
+    width: auto; 
+  }
+
+
+  .nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    color: #007bff;
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  select {
+    padding: 5px;
+    border-radius: 4px;
+  }
+
+  .emergency-contact {
+    color: red;
+    font-weight: bold;
+  }

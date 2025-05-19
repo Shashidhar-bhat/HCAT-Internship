@@ -1,0 +1,28 @@
+<button onclick="getRehabList()">Get Rehab List</button>
+<table id="rehabTable" border="1"></table>
+
+<script>
+  async function getRehabList() {
+    const response = await fetch('http://localhost:3001/api/rehab-list');
+    const data = await response.json();
+
+    const table = document.getElementById("rehabTable");
+    table.innerHTML = "";
+
+    const headers = Object.keys(data[0]);
+    let row = table.insertRow();
+    headers.forEach(header => {
+      let cell = row.insertCell();
+      cell.innerHTML = `<b>${header}</b>`;
+    });
+
+    data.forEach(record => {
+      let row = table.insertRow();
+      headers.forEach(header => {
+        let cell = row.insertCell();
+        cell.textContent = record[header];
+      });
+    });
+  }
+</script>
+
