@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+
 import { FeedbackComponent } from './feedback/feedback.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
@@ -21,23 +22,20 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-
     PrivacyPolicyComponent,
     TermsConditionsComponent,
     AboutUsComponent,
-
-
     ContactUsComponent,
-    BookAppointmentComponent,
     HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    LocationsComponent,
-    SpecialitiesComponent,
     FeedbackComponent,
+    SpecialitiesComponent,
+    LocationsComponent,
+    BookAppointmentComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,19 +1,50 @@
-<div class="appointment-form-container">
-    <h2>Book an Appointment</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="text" placeholder="Phone Number" required>
-      <select>
-        <option>Select Department</option>
-        <option>Cardiology</option>
-        <option>Neurology</option>
-        <option>Orthopedics</option>
-      </select>
-      <input type="date" placeholder="Preferred Date">
-      <textarea placeholder="Additional Message"></textarea>
+<div class="appointment-form-wrapper">
+  <button class="dark-mode-toggle" (click)="toggleDarkMode()">
+    {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
+  </button>
 
-      <button type="submit">Book Appointment</button>
+  <div class="appointment-card" [class.dark-mode]="isDarkMode">
+    <h2 class="title">Book an Appointment</h2>
+    <form class="appointment-form" (ngSubmit)="onSubmit()" #form="ngForm">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="name" ngModel required placeholder="Your full name" />
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" ngModel required placeholder="example@mail.com" />
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" ngModel required placeholder="10-digit number" />
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+        <select name="department" ngModel required>
+          <option value="" disabled selected>Select Department</option>
+          <option>Cardiology</option>
+          <option>Neurology</option>
+          <option>Orthopedics</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Preferred Date</label>
+        <input type="date" name="date" ngModel required />
+      </div>
+
+      <div class="form-group">
+        <label>Additional Message</label>
+        <textarea name="message" ngModel rows="4" placeholder="Your message"></textarea>
+      </div>
+
+      <button class="submit-btn" [disabled]="loading || !form.valid" type="submit">
+        <span *ngIf="!loading">Book Appointment</span>
+        <span *ngIf="loading" class="loader"></span>
+      </button>
     </form>
   </div>
-
+</div>
